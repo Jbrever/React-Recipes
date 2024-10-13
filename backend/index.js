@@ -9,8 +9,8 @@ mongoDbConnection("mongodb+srv://jbrever:jbrever7@cluster0.b1sca.mongodb.net/use
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-app.use('/api/signup',signupRoute);
-app.use('/api/login',loginRoute);
+app.use('/signup',signupRoute);
+app.use('/login',loginRoute);
 
 app.get('/',(req,res)=>{
     console.log('hello');

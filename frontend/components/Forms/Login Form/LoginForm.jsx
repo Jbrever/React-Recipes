@@ -68,7 +68,7 @@ function LoginForm(){
     async function handleLoginFormSubmition(e) {
         e.preventDefault()
         try{
-            const response = await axios.post('http://localhost:4000/api/login',{email,password});
+            const response = await axios.post('https://react-recipes-server.vercel.app/login',{email,password});
             
             if(response.status == 200){
                navigate('/');

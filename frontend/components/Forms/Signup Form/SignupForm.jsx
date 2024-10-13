@@ -72,7 +72,7 @@ function SignupForm(){
     async function handleSignupFormSubmit(e){
         e.preventDefault();
         try{
-            let response = await axios.post('http://localhost:4000/api/signup',{ username, email, password})
+            let response = await axios.post('https://react-recipes-server.vercel.app/signup',{ username, email, password})
             console.log('here',response);
             if(response.status == 201){
                 navigate('/login')
