@@ -1,5 +1,5 @@
 import React, { useEffect,useContext, useState } from "react";
-import {Link, useNavigate} from 'react-router-dom'
+import {json, Link, useNavigate} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope ,faUser , faLock , faCaretLeft , faCaretRight} from '@fortawesome/free-solid-svg-icons'
 import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
@@ -64,15 +64,23 @@ function LoginForm(){
             document.querySelector('.loginMainContainer').classList.remove('darkMode')
         }
     },[themeMode])
-    
+
+    useEffect(()=>{
+        if(localStorage.getItem("token")){
+            navigate('/')
+        }
+    })
     async function handleLoginFormSubmition(e) {
         e.preventDefault()
         try{
             const response = await axios.post('https://react-recipes-server.vercel.app/login',{email,password});
+            // const response = await axios.post('http://localhost:4000/login',{email,password});
             
             if(response.status == 200){
+               localStorage.setItem("token",JSON.stringify(response.data.token));
+               localStorage.setItem("userData",JSON.stringify(response.data.user));
                navigate('/');
-               console.log("user loged in successfully ");
+               console.log("response => ",response);
             }
         }
         catch(err){
@@ -89,7 +97,6 @@ function LoginForm(){
            }
         }
     }
-
     return(
      <div className="loginMainContainer">
             <div className="loginHeading">
