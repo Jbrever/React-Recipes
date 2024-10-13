@@ -1,0 +1,75 @@
+
+1) Random recipe
+   "https://api.spoonacular.com/recipes/random?number={NUMBER OF RECIPES}&apiKey={API_KEY}"
+
+2) give All the Recipe 
+  "https://api.spoonacular.com/recipes/complexSearch?query=snack&apiKey={key}&number={number of product}"
+
+3) find the details of particular recipe by ID
+"https://api.spoonacular.com/recipes/{ID}/information?apiKey="
+
+4) get similar recipe
+"https://api.spoonacular.com/recipes/{id}/similar?apiKey="
+
+5) search grocery product
+"https://api.spoonacular.com/food/products/search?query={food-name}&number=2"
+
+6) ChatBot 
+"https://api.spoonacular.com/food/converse?text=tell+me+a+joke"
+
+
+1) type
+main course
+side dish
+dessert
+appetizer
+salad
+bread
+breakfast
+soup
+beverage
+sauce
+marinade
+fingerfood
+snack
+drink
+
+
+2) cuisine
+African
+Asian
+American
+British
+Cajun
+Caribbean
+Chinese
+Eastern European
+European
+French
+German
+Greek
+Indian
+Irish
+Italian
+Japanese
+Jewish
+Korean
+Latin American
+Mediterranean
+Mexican
+Middle Eastern
+Nordic
+Southern
+Spanish
+Thai
+Vietnamese
+
+
+3)
+
+
+
+
+
+EDAMAM API
+https://api.edamam.com/api/recipes/v2?type=public&q=juice&app_id=98fc6c69&app_key=617f8220dd88e77cd5d96ff7a2f12f93

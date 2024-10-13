@@ -1,0 +1,429 @@
+.navbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 0 30px;
+    position: fixed;
+    z-index:   2;
+
+}
+
+.right-navbar-container{
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 100px;
+   overflow:hidden;
+   /* box-shadow: 1px 1px 6px; */
+   border-radius: 0 0 15px 15px;
+   
+}
+  
+  .web-logo , .right-navbar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border-radius: 0 0 15px 15px;
+}
+  .web-logo {
+    background-color: #f84040;
+    color: white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-bottom: 2px solid rgb(174, 171, 171);
+    border-top: none;
+    position: relative;
+    left: 80px;
+}
+  
+  .right-navbar {
+    background-color: rgb(255, 255, 255);
+    padding: 0 20px 0 0;
+    border-bottom: 2px solid rgb(174, 171, 171);
+    color:rgb(255, 57, 57);
+}
+
+.right-navbar-darkMode{
+  background-color: rgb(26, 26, 26);
+}
+
+.navbarDarkModeFontColor{
+  color: white;
+}
+
+.right-navbar ul {
+    display: flex;
+  }
+  
+  .right-navbar ul li{
+    list-style: none;
+    margin: 0 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+}
+
+.right-navbar ul li NavLink{
+    text-decoration: none;
+}
+
+.searchBar{
+    display: flex;
+    position: relative;
+}
+
+.searchBar .inpBar{
+    display: none;
+}
+
+.searchBar .showSearchBox{
+    display: block;
+    width: 200px;
+    background-color: rgb(255, 255, 255);
+    padding: 0 40px 0 0;
+    border-radius: 15px;
+    border: 2px solid rgb(114, 110, 110);
+    position: relative;
+    left: 42px;
+    top: -2px;
+    margin-left: -40px;
+    transition: all 1s linear;
+}
+
+.searchBar input{
+    height: 40px;
+    width: 100%;
+    border-radius: 20px;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+}
+.searchBar input:focus{
+    outline: none;
+    border: none;
+}
+.searchBar input::placeholder{
+    font-size: 16px;
+}
+
+.searchBar .icon{
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 18px;
+    position: relative;
+    right: 0px;
+    top: 0px;
+}
+
+
+.dark-night-mode , .profileIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    border-radius: 50%;
+    margin: 20px;
+}
+
+.navbar .dark-night-mode {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(0, 0, 0);
+    color: white;    
+}
+.navbardarkMode .dark-night-mode{
+    width: 40px;
+    height: 40px;
+    color: black;
+    background-color: rgb(255, 254, 254);    
+}
+
+.profileIcon{
+    width: 48px;
+    height: 48px;
+    margin: 5px 20px 0 0;
+    background-color: rgb(115, 127, 222);
+    font-size: 24px;
+}
+
+.icon:active , .dark-night-mode:active , .profileIcon:active{
+    transform:scale(0.9);
+}
+
+.nav-link{
+    height: 60px;
+    color: black;
+    transition: all .3s linear;
+}
+
+.nav-link:hover{
+    background-color: rgb(248, 64, 64);
+    color: white;
+}
+
+.darktModeNavLink{
+  color: white;
+}
+
+.active-nav{
+    height: 60px;
+    background-color: rgb(248, 64, 64);
+    color: white;
+}
+
+.nav-link,.active-nav{
+    display: flex;
+    align-items: center; 
+}
+
+.home{
+   border-radius: 0 0 0 14px;
+}
+
+
+@media (max-width: 1160px) {
+  .navbar {
+    padding: 0 10px;
+  }
+
+  .right-navbar-container {
+    gap: 25px;
+  }
+
+  .web-logo {
+    left: 40px;
+    font-size: 15px;
+  }
+
+}
+
+
+@media (max-width: 1000px) {
+  .navbar {
+    padding: 0 0px;
+  }
+
+  .right-navbar-container {
+    gap: 15px;
+  }
+
+  .web-logo {
+    left: 30px;
+  }
+
+}
+
+@media (max-width: 960px) {
+
+  .right-navbar-container {
+    gap: 15px;
+  }
+  .web-logo {
+    left: 10px;
+  }
+}
+
+
+@media (max-width: 930px) {
+
+    .navbar {
+      padding: 0 20px;
+      height: 55px;
+    }
+  
+    .right-navbar-container {
+      gap: 0px;
+      padding: 0 0px;
+    }
+  
+    .web-logo {
+      left: 0px;
+      font-size: 15px;
+    }
+    .right-navbar ul li {
+      margin: 10px;
+      font-size: 16px;
+    }
+  
+    .searchBar .showSearchBox {
+      width: 150px;
+      margin-left: -40px;
+    }
+  
+    .searchBar input {
+      height: 38px;
+      font-size: 15px;
+    }
+  
+    .searchBar .icon {
+      width: 35px;
+      height: 35px;
+      font-size: 17px;
+    }
+  
+    .dark-night-mode {
+      width: 38px;
+      height: 38px;
+    }
+  
+    .profileIcon {
+      width: 42px;
+      height: 42px;
+      font-size: 22px;
+      margin: 5px 15px;
+    }
+  
+    .nav-link, .active-nav {
+      height: 55px;
+      font-size: 15px;
+    }
+  
+    .home {
+      border-radius: 0 0 0 12px;
+    }
+  }
+
+  @media (max-width: 840px) {
+
+    .right-navbar-container {
+      gap: 0px;
+    }
+    .web-logo {
+      left: 0;
+      font-size: 12px;
+    }
+  }
+
+
+
+@media (max-width: 780px) {
+
+  .navbar {
+    padding: 0 0;
+    height: 55px;
+  }
+
+  .right-navbar-container {
+    gap: 0px;
+    padding: 0 0px;
+  }
+
+  .web-logo {
+    left: 10px;
+    font-size: 10px;
+  }
+  .right-navbar ul li {
+    margin: 10px;
+    font-size: 13px;
+  }
+
+  .searchBar .showSearchBox {
+    width: 120px;
+    margin-left: -40px;
+  }
+}
+
+  
+  @media (max-width: 480px) {
+  
+    .navbar {
+      flex-direction: column;
+      height: auto;
+    }
+    .right-navbar-container {
+      height: 55px;
+      gap: 0px;
+      padding: 0;
+      align-items: flex-start;
+    }
+
+    .web-logo {
+      border-radius: 0 0 0 0;
+      width: 100%;
+      font-size: 17px;
+      left: 0;
+      padding: 20px 0 20px 30px;
+      display: flex;
+      justify-content:flex-start;
+      align-items: center;
+      border-bottom: 3px solid rgb(255, 255, 255);
+    }
+    .right-navbar{
+    }
+    .right-navbar ul li {
+      font-size: 17px;
+    }
+
+    .searchBar .showSearchBox {
+      width: 140px;
+    }
+  
+    .searchBar input {
+      height: 30px;
+      font-size: 15px;
+    }
+  
+    .searchBar .icon {
+      width: 30px;
+      height: 30px;
+      font-size: 14px;
+    }
+  
+    .dark-night-mode {
+      width: 45px;
+      height: 45px;
+      font-size: 18px;
+      position: absolute;
+      top: -5px;
+      right: 65px;
+    }
+  
+    .profileIcon {
+      width: 45px;
+      height: 45px;
+      font-size: 18px;
+      position: absolute;
+      top: 8px;
+      right: 10px;
+    }
+  
+    .nav-link, .active-nav {
+      height:55px
+    }
+  
+    .home {
+      border-radius:0 0 0 15px;
+      padding-left: 10px;
+    }
+  }
+
+  @media (max-width: 440px) {
+    .searchBar .showSearchBox {
+      width: 120px;
+    }
+
+    .right-navbar ul li {
+      font-size: 15px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .web-logo {
+      border-radius: 0 0 0 0;
+      width: 100%;
+      font-size: 17px;
+      left: 10;
+      padding: 20px 0 20px 50px;
+      display: flex;
+      justify-content:flex-start;
+      align-items: center;
+      border-bottom: 3px solid rgb(255, 255, 255);
+    }
+  }
+  

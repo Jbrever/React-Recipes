@@ -1,0 +1,219 @@
+
+
+/* for dark Mode */
+.loginMainContainer{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+.darkMode{
+  background-color: rgb(61, 61, 61);
+}
+
+.loginHeading{
+    font-size: 40px;
+    text-transform: capitalize;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: rgb(116, 116, 116);
+}
+
+.loginHeading p{
+    margin-top: 10px;
+    font-size: 25px;
+}
+
+/* for dark Mode */
+.darkMode .loginHeading{
+    color:white;
+}
+
+.loginContainer{
+    width: 900px;
+    max-width: 70%;
+    height: 450px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;  
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 15px black;
+}
+
+/* for dark Mode */
+.darkMode .loginContainer{
+    background-color: rgb(36, 36, 36);
+}
+
+.loginContainer .images{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    border: solid 10px rgb(255, 255, 255);
+    border-right: none;
+    background-image: url('https://images.unsplash.com/photo-1530912585210-7916cd026e59?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition:background-image 1s ease-in;
+}
+
+/* for dark Mode */
+.darkMode .loginContainer .images{
+    border: solid 10px rgb(36, 36, 36);
+}
+
+.loginContainer .images .slideBtn{
+    width: 30px;
+    height: 30px;
+    border: 2px solid ;
+    background-color: rgb(8, 108, 196);
+    border-radius: 50%;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 40px;
+}
+
+.loginContainer .images .slideBtn:active{
+    transform: scale(0.9);
+}
+
+
+.loginContainer .loginPage{
+    width: 50%;
+    height: 100%;
+    background-color:rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* for dark Mode */
+.darkMode .loginContainer .loginPage{
+    background-color:rgb(36, 36, 36);
+
+}
+.loginContainer .loginPage .user-img{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-image: url('https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes.png');
+    background-size: cover;
+    background-position: center;
+    align-self: center;
+    margin:20px 0;  
+}
+
+.loginContainer .loginPage .welcomeHeading{
+    text-transform: uppercase;
+    text-align: center;
+    color: rgb(63, 62, 62);
+}
+
+.darkMode .loginContainer .loginPage .welcomeHeading{
+    color: white;
+}
+
+.loginContainer .loginPage form{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 30px ;
+}
+
+.loginContainer .loginPage form label{
+    color: rgb(165, 161, 161);
+}
+
+.loginContainer .loginPage form input{
+    width: 90%;
+    border: none;
+    background-color:transparent;
+    border-bottom: 2px solid rgb(225, 225, 225) ;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 15px;
+    transition:border-bottom 0.7s;
+}
+
+.loginContainer .loginPage form input:focus{
+    outline: none;
+    border-bottom: rgb(8, 108, 196) 2px solid;
+}
+
+.darkMode .loginPage form input::placeholder{
+    color: rgb(169, 168, 168);
+}
+
+.loginContainer .loginPage form .loginBtn{
+   height: 40px;
+   background-color: rgb(8, 108, 196);
+   border: none;
+   font-size: 20px;
+   text-transform: uppercase;
+   border-radius: 20px;
+   color: white;
+   font-weight: bolder;
+   margin-top: 20px;
+   transition: background-color 0.5s;
+}
+.loginContainer .loginPage form .loginBtn:hover{
+   background-color:  rgb(13, 59, 99) ;
+}
+
+.loginContainer .loginPage form .links ,Link{
+    font-size: 12px;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.loginContainer .loginPage form .links .forgetPas{
+    color: rgb(196, 8, 8);
+}
+
+.loginContainer .loginPage form .links .signUp{
+    color: rgb(79, 79, 251);
+    text-decoration: none;
+}
+
+@media  (max-width : 700px){
+   .loginContainer .images{
+         transition: all 0.5s ;
+         display: none;
+    }
+      
+    .loginContainer .loginPage{
+        width: 100%;
+
+    }
+}
+
+@media (max-width:420px){
+    .loginContainer{
+        height: 400px;
+    }
+   
+}
+
+@media (max-width:500px){
+    .loginHeading{
+        margin-top: 100px;
+        margin-bottom: -20px;
+        font-size: 22px;
+    }
+    .loginHeading p{
+        font-size: 21px;
+    }
+}

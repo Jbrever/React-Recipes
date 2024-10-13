@@ -1,0 +1,11 @@
+.profileContainer{
+    height: 100vh;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileDarkMode{
+    background-color: #121212;
+}
