@@ -36,7 +36,7 @@ function UserProfile(){
             }
         }
         verifyLogedInUser();
-    })
+    },[])
     
     return(
         <div className="profileContainer">
@@ -49,7 +49,7 @@ function UserProfile(){
                  <img src="https://cdn.vectorstock.com/i/500p/20/76/man-avatar-profile-vector-21372076.jpg" alt="" />
                </div>
                <div className="userName">
-                  <p>{userData}</p>
+                  <p>{userData ? userData.username : "user"}</p>
                </div>
            </div>
         </div>
