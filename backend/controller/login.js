@@ -1,13 +1,11 @@
 const userModel = require("../model/userSchema")
 const bcrypt = require("bcrypt")
-const jsonwebtoken = require('jsonwebtoken');
-const secret_key = "jbrever$#@1"
+const { setUserToken } = require("../services/userAuth")
 
-async function getLogin(req,res){
+async function postLogin(req,res){
     try{
        const {email,password} = req.body
        const user = await userModel.findOne({email})
-       console.log("user => ",user)
        if(!user){
          return res.status(404).json({"msg":"user not found"})
        }
@@ -17,17 +15,13 @@ async function getLogin(req,res){
        if(passwordMatch){
          const userObj = user.toObject();
          delete userObj.password
-
-          jsonwebtoken.sign({userObj},secret_key,{expiresIn:"1h"},(err,token)=>{ 
-            if(err){
-              console.log("err occure during generate JWT Token => ",err);
-            }
-            return res.status(200).json({
-              "user":userObj,
-              "token":token,
-              "msg":"user credentials matched succesfully",
-            });
-         })
+         const token = await setUserToken(userObj); 
+        return res.status(200).json({
+          "user":userObj,
+          "token":token,
+          "msg":"user credentials matched succesfully",
+        });
+          
        }else{
          return res.status(401).json({'msg':"password not matched"})
        }
@@ -38,4 +32,4 @@ async function getLogin(req,res){
     }
 }
 
-module.exports = getLogin;
+module.exports = postLogin;

@@ -145,6 +145,10 @@
     transition:border-bottom 0.7s;
 }
 
+.darkMode .loginContainer .loginPage form input{
+    color: white;
+}
+
 .loginContainer .loginPage form input:focus{
     outline: none;
     border-bottom: rgb(8, 108, 196) 2px solid;

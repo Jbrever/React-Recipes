@@ -73,8 +73,8 @@ function LoginForm(){
     async function handleLoginFormSubmition(e) {
         e.preventDefault()
         try{
-            const response = await axios.post('https://react-recipes-server.vercel.app/login',{email,password});
-            // const response = await axios.post('http://localhost:4000/login',{email,password});
+            // const response = await axios.post('https://react-recipes-server.vercel.app/login',{email,password});
+            const response = await axios.post('http://localhost:4000/login',{email,password});
             
             if(response.status == 200){
                localStorage.setItem("token",JSON.stringify(response.data.token));

@@ -9,3 +9,111 @@
 .profileDarkMode{
     background-color: #121212;
 }
+
+
+.userNotLogedIN{
+    display: none;
+}
+
+.profileDarkMode .userNotLogedIN.active{
+    background:linear-gradient(#121212,rgb(250, 79, 79));
+}
+
+.profileDarkMode .userNotLogedIN.active .heading{
+    color: white;
+}
+
+.userNotLogedIN.active{
+    height: 92vh;
+    margin-top: 8vh;
+    width: 100vw;
+    background:linear-gradient(#ffffff,rgb(255, 223, 223),rgb(250, 79, 79));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:200px
+}
+
+.userNotLogedIN.active .heading{
+    color: rgb(103, 103, 103);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    text-transform: capitalize;
+}
+
+.userNotLogedIN.active .loginBtn{
+    height: 45px;
+    width: 150px;
+    border: none;
+    background-color: rgb(255, 25, 25);
+    color: white;
+    font-size: 22px;
+    border-radius: 5px;
+}
+
+.userNotLogedIN.active .loginBtn:hover{
+    background-color: rgb(237, 27, 27);
+}
+
+.userNotLogedIN.active .loginBtn:active{
+    transform: scale(0.97);
+}
+
+.userLogedIN{
+    display: none;
+}
+
+.userLogedIN.active{
+    height: 92vh;
+    width: 100vw;
+    margin-top: 8vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.userLogedIN.active .userImage {
+    width: 250px;
+    height: 250px;
+    margin-top: 50px;
+    border: 5px white solid;
+    background-color: rgba(240, 240, 240, 0.632);
+    border-radius: 50%;
+}
+.profileDarkMode .userLogedIN.active .userImage {
+    border: 5px rgb(80, 80, 80) solid;
+}
+.userLogedIN.active .userImage img{
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.userLogedIN.active .userName{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-top: 10px;
+    text-transform: capitalize;
+}
+
+.profileDarkMode .userLogedIN.active .userName{
+    color: white;
+}
+@media (max-width:550px){
+    
+    .userNotLogedIN.active .heading{
+        font-size: 20px;
+    }
+    .userNotLogedIN.active .loginBtn{
+        margin-top: -10px;
+    }
+
+    .userLogedIN.active .userImage {
+        margin-top: 110px;
+        width: 130px;
+        height: 130px;
+    }
+}

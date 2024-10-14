@@ -4,7 +4,7 @@ import axios from "axios";
 function useDetailsRecipeHook(id){
     let [data,setData] = useState({})
     
-    const URL =`https://api.spoonacular.com/recipes/${id.slice(1)}/information?apiKey=${'d7408074211b436ab11ca7c28b6c82a2'}`
+    const URL =`https://api.spoonacular.com/recipes/${id.slice(1)}/information?apiKey=${'d7408074211b436ab11ca7c28b6c82a200'}`
     useEffect(()=>{
      async function fetchData(){
        try{
