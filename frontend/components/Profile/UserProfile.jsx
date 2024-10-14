@@ -6,7 +6,6 @@ import axios from "axios";
 function UserProfile(){
     const navigate = useNavigate();
     let [userData,setUserData] = useState(JSON.parse(localStorage.getItem("userData")))
-    console.log(userData.username)
     // for Dark-Light mode
     const {themeMode} = useContext(ThemeModeContext)
     useEffect(()=>{
