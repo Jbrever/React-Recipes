@@ -50,7 +50,7 @@ function UserProfile(){
                  <img src="https://cdn.vectorstock.com/i/500p/20/76/man-avatar-profile-vector-21372076.jpg" alt="" />
                </div>
                <div className="userName">
-                  <p>{userData.username}</p>
+                  <p>{userData}</p>
                </div>
            </div>
         </div>
