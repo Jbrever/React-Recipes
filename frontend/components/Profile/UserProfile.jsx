@@ -73,10 +73,9 @@ function UserProfile(){
                 console.log("error occure during fetch wishList Data => ",err.response);
                 if(err.response.status == 401){
                     document.querySelector(".wishListH2Heading").innerText = "your wishList is empty"
-                    document.querySelector(".deleteAllWishList").remove();
                 }
                 if(err.response.status == 404)window.alert(err.response.data.msg)
-                }
+            }
         }
         fetchWishListData();
     },[])
@@ -91,6 +90,7 @@ function UserProfile(){
             // window.location.reload();
             // navigate(0);
             document.querySelector(".deleteAllWishList").remove();
+            document.querySelector(".wishListH2Heading").innerText = "your wishList is empty"
             setWishListData([])
            }
          }catch(err){
