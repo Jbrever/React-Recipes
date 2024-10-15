@@ -53,7 +53,7 @@ function UserProfile(){
             try{
                 const userData = JSON.parse(localStorage.getItem("userData"));
                
-                const response = await axios.post(`https://react-recipes-server.vercel.app/wishList/wishListdata/:${userData.email}`); 
+                const response = await axios.get(`https://react-recipes-server.vercel.app/wishList/wishListdata/:${userData.email}`); 
                 // const response = await axios.get(`http://localhost:4000/wishList/wishListdata/:${userData.email}`);
                
                 document.querySelector(".wishListH2Heading").innerText = "your wishList"

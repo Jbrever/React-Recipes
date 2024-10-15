@@ -3,7 +3,7 @@ const secret_key = "jbrever$#@1"
 
 async function setUserToken(userObj){
    try{
-     const token = jsonwebtoken.sign({userObj},secret_key,{expiresIn:"10h"})
+     const token = jsonwebtoken.sign({userObj},secret_key,{expiresIn:"10m"})
      return token;
    }catch(err){
      console.log("error occure during generate JWT token => ", err);
