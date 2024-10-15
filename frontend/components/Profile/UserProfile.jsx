@@ -77,7 +77,9 @@ function UserProfile(){
            // reload page when All wishList data deleted
            if(response.status == 200){
             // window.location.reload();
-            navigate(0);
+            // navigate(0);
+            document.querySelector(".deleteAllWishList").remove();
+            setWishListData([])
            }
          }catch(err){
             console.log("error occure during delte all wishList Data => ",err.response);
