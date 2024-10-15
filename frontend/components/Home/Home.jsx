@@ -9,8 +9,10 @@ function Home(){
      
      useEffect(()=>{
 
-        if(themeMode === 'dark'){   
+        if(themeMode === 'dark'){ 
+            const image = ""  
             document.querySelector('.homeContainer').classList.toggle("darkHomeContainer");
+
         }else{
           document.querySelector('.homeContainer').classList.remove("darkHomeContainer");
         }

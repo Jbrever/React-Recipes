@@ -72,8 +72,8 @@ function SignupForm(){
     async function handleSignupFormSubmit(e){
         e.preventDefault();
         try{
-            // let response = await axios.post('https://react-recipes-server.vercel.app/signup',{ username, email, password})
-            let response = await axios.post('http://localhost:4000/signup',{ username, email, password})
+            let response = await axios.post('https://react-recipes-server.vercel.app/signup',{ username, email, password})
+            // let response = await axios.post('http://localhost:4000/signup',{ username, email, password})
             
             console.log('here',response);
             if(response.status == 201){
@@ -115,7 +115,7 @@ function SignupForm(){
            <form onSubmit={handleSignupFormSubmit} method="post" action=""> 
               <label htmlFor="username">
                  <FontAwesomeIcon icon={faUser}/>
-                 <input required type="text" name="username" value={username} onChange={(e)=>setUsername(e.target.value)} placeholder="Enter Usernamem" id="username"/>
+                 <input required type="text" name="username" value={username} onChange={(e)=>setUsername(e.target.value)} placeholder="Enter user-name" id="username"/>
               </label>
               <label htmlFor="email1">
                  <FontAwesomeIcon icon={faEnvelope}/>

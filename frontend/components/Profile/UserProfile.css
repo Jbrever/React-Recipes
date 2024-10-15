@@ -6,11 +6,6 @@
     align-items: center;
 }
 
-.profileDarkMode{
-    background-color: #121212;
-}
-
-
 .userNotLogedIN{
     display: none;
 }
@@ -73,6 +68,10 @@
     flex-direction: column;
 }
 
+.profileDarkMode .userLogedIN.active{
+ background-color: #121212;
+}
+
 
 .userLogedIN.active .userImage {
     width: 250px;
@@ -102,6 +101,51 @@
 .profileDarkMode .userLogedIN.active .userName{
     color: white;
 }
+
+.userLogedIN.active .logoutBtn{
+    margin-top: 20px;
+    padding:10px 15px;
+    font-size: 17px;
+    border: none;
+    background-color: rgb(255, 50, 50);
+    color: white;
+    border-radius: 5px;
+
+}
+
+.userLogedIN.active .wishListContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.profileDarkMode .userLogedIN.active .wishListContainer{
+    background-color: #121212;
+}
+
+.userLogedIN.active .wishListContainer .wishListHeading{
+    margin-top: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+    color: #848080;
+}
+
+.userLogedIN.active .wishListContainer .wishListMain{
+    width: 100vw;
+    height: auto;
+}
+.userLogedIN.active .logoutBtn:active{
+    transform: scale(0.96);
+}
+
+.userLogedIN.active .wishListMain{
+    margin-top: -20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
 @media (max-width:550px){
     
     .userNotLogedIN.active .heading{
@@ -115,5 +159,10 @@
         margin-top: 110px;
         width: 130px;
         height: 130px;
+    }
+
+    .userLogedIN.active .logoutBtn{
+        padding:10px 12px;
+        font-size: 13px;
     }
 }

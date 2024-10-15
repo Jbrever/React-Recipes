@@ -1,4 +1,4 @@
-const userModel = require("../model/userSchema")
+const {userModel} = require("../model/index")
 const bcrypt = require("bcrypt")
 const { setUserToken } = require("../services/userAuth")
 

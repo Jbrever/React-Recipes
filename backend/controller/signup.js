@@ -1,4 +1,4 @@
-const userModel = require("../model/userSchema")
+const {userModel} = require("../model/index")
 const bcrypt = require("bcrypt")
 
 async function postSignup(req,res){
@@ -14,7 +14,7 @@ async function postSignup(req,res){
     const savedUser = await newUser.save();
      
     return res.status(201).json({"msg":"new user created"})
-  
+    
   }catch(err){
     console.log("error occure at signup controller => ",err);
     res.status(404).json({'msg':"default error"})   

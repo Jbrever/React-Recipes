@@ -1,6 +1,7 @@
-const getLogin = require("./login");
+const postLogin = require("./login");
 const postSignup = require("./signup")
 const userAuth = require("./userAuth")
+const {postRecipeWishList,getRecipeWishList} = require("./recipeWishList");
 
-module.exports ={getLogin , postSignup ,userAuth}
+module.exports ={postLogin , postSignup ,userAuth , postRecipeWishList,getRecipeWishList}
 
