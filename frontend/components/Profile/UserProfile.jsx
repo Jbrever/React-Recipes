@@ -57,6 +57,18 @@ function UserProfile(){
                 
                 document.querySelector(".wishListH2Heading").innerText = "your wishList"
                 setWishListData(response.data.wishListData);
+
+                // create deleteAll Btn for delete enitre wishList Data after fetch Data
+                let wishListContainerTag = document.querySelector(".wishListContainer");
+                let deleteAllWishListTag = document.createElement('div');
+                deleteAllWishListTag.classList.add("deleteAllWishList");
+                wishListContainerTag.appendChild(deleteAllWishListTag);
+                let deleteAllBtnTag = document.createElement('button');
+                deleteAllBtnTag.classList.add('deleteAllBtn');
+                deleteAllBtnTag.innerText = "Delete All"
+                deleteAllBtnTag.addEventListener("click",handleDeleteAllWishListBtn)
+                deleteAllWishListTag.appendChild(deleteAllBtnTag);
+                
             }catch(err){
                 console.log("error occure during fetch wishList Data => ",err.response);
                 if(err.response.status == 401){
@@ -85,7 +97,6 @@ function UserProfile(){
             console.log("error occure during delte all wishList Data => ",err.response);
          }
     }
-    console.log("wishList data =>",wishListData);
 
     return(
         <div className="profileContainer">
@@ -114,9 +125,9 @@ function UserProfile(){
                         })
                     }
                   </div>
-                  <div className="deleteAllWishList">
+                  {/* <div className="deleteAllWishList">
                     <button className="deleteAllBtn" onClick={handleDeleteAllWishListBtn}>Delete All</button>
-                  </div>
+                  </div> */}
                </div>
            </div>
         </div>
