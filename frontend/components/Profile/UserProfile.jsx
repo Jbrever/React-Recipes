@@ -46,29 +46,45 @@ function UserProfile(){
         localStorage.removeItem("userData");
         navigate('/');
     }
+
     
     // for get wishList Data 
     useEffect(()=>{
         async function fetchWishListData(){
-            try{
-                const userData = JSON.parse(localStorage.getItem("userData"));
-               
+            try{                
                 const response = await axios.get(`https://react-recipes-server.vercel.app/wishList/wishListdata/:${userData.email}`); 
                 // const response = await axios.get(`http://localhost:4000/wishList/wishListdata/:${userData.email}`);
-               
+                
                 document.querySelector(".wishListH2Heading").innerText = "your wishList"
                 setWishListData(response.data.wishListData);
             }catch(err){
                 console.log("error occure during fetch wishList Data => ",err.response);
                 if(err.response.status == 401){
-                  document.querySelector(".wishListH2Heading").innerText = "your wishList is empty"
+                    document.querySelector(".wishListH2Heading").innerText = "your wishList is empty"
+                    document.querySelector(".deleteAllWishList").remove();
                 }
                 if(err.response.status == 404)window.alert(err.response.data.msg)
-            }
-            }
-            fetchWishListData();   
-        },[])
-        console.log("wishList----",wishListData);
+                }
+        }
+        fetchWishListData();
+    },[])
+
+    async function handleDeleteAllWishListBtn(){
+         try{
+           const response = await axios.delete(`https://react-recipes-server.vercel.app/wishList/deleteAllwishList/:${userData.email}`); 
+        //    const response = await axios.delete(`http://localhost:4000/wishList/deleteAllwishList/:${userData.email}`);
+           
+           // reload page when All wishList data deleted
+           if(response.status == 200){
+            // window.location.reload();
+            navigate(0);
+           }
+         }catch(err){
+            console.log("error occure during delte all wishList Data => ",err.response);
+         }
+    }
+    console.log("wishList data =>",wishListData);
+
     return(
         <div className="profileContainer">
            <div className="userNotLogedIN">
@@ -95,6 +111,9 @@ function UserProfile(){
                            return <RecipesCards key={index} id={ele.recipeId} image={ele.image} title={ele.title}/>
                         })
                     }
+                  </div>
+                  <div className="deleteAllWishList">
+                    <button className="deleteAllBtn" onClick={handleDeleteAllWishListBtn}>Delete All</button>
                   </div>
                </div>
            </div>

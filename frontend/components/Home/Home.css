@@ -17,6 +17,12 @@
   /* background-image: url(); */
 }
 
+.darkHomeContainer .mainImg{
+  background-image: url('../Images/Home/dark2.jpg');
+  background-position:center;
+  background-size: cover;
+}
+
 .cardsContainer{
   padding: 20px 0px;
   display: flex;

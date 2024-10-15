@@ -116,7 +116,7 @@ function LoginForm(){
             <div className="user-img"></div>
             <h1 className="welcomeHeading">welcome</h1>
        
-           <form onSubmit={handleLoginFormSubmition} method='post' action=""> 
+           <form onSubmit={handleLoginFormSubmition} autoComplete="off" method='post' action=""> 
               <label htmlFor="email1">
                  <FontAwesomeIcon icon={faEnvelope}/>
                  <input required type="email" name="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="Enter email" id="email1"/>

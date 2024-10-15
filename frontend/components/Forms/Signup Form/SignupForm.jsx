@@ -112,7 +112,7 @@ function SignupForm(){
             <div className="user-img"></div>
             <h1 className="welcomeHeading">welcome</h1>
        
-           <form onSubmit={handleSignupFormSubmit} method="post" action=""> 
+           <form onSubmit={handleSignupFormSubmit} autoComplete="off" method="post" action=""> 
               <label htmlFor="username">
                  <FontAwesomeIcon icon={faUser}/>
                  <input required type="text" name="username" value={username} onChange={(e)=>setUsername(e.target.value)} placeholder="Enter user-name" id="username"/>

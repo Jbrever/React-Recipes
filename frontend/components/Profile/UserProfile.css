@@ -110,7 +110,10 @@
     background-color: rgb(255, 50, 50);
     color: white;
     border-radius: 5px;
+}
 
+.userLogedIN.active .logoutBtn:hover{
+    background-color: rgb(255, 30, 30);
 }
 
 .userLogedIN.active .wishListContainer{
@@ -145,6 +148,22 @@
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+}
+
+.userLogedIN.active .wishListContainer .deleteAllBtn{
+    margin-bottom: 50px;
+    padding:10px 15px;
+    font-size: 17px;
+    border: none;
+    background-color: rgb(255, 50, 50);
+    color: white;
+    border-radius: 5px;
+}
+.userLogedIN.active .wishListContainer .deleteAllBtn:hover{
+    background-color: rgb(255, 30, 30);
+}
+.userLogedIN.active .wishListContainer .deleteAllBtn:active{
+    transform: scale(0.96);
 }
 @media (max-width:550px){
     
