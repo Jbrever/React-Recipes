@@ -9,7 +9,7 @@ import {recipeData} from '../Dummy Data/index'
     if(searchValue == null) searchValue = "veg"
     useEffect(()=>{
       const fetchData = async () =>{
-        const URL = `https://api.spoonacular.com/recipes/complexSearch?query=${searchValue}&apiKey=${"d7408074211b436ab11ca7c28b6c82a2"}&number=32`
+        const URL = `https://api.spoonacular.com/recipes/complexSearch?query=${searchValue}&apiKey=${"bb67b46e5c61467cb97328f34b91e743"}&number=32`
           try{
             let resoponse = await axios.get(URL)
             setData(resoponse.data.results);
