@@ -1,10 +1,8 @@
 const {recipeWishListModel} = require("../model/index")
-let deleteOneRecipeByemail = undefined;
 async function  postRecipeWishList(req,res){
   try{
       const {recipeId,image,title,userData} = req.body;
       const userEmail = userData.email;
-      deleteOneRecipeByemail = userEmail;
       const isRecipeExisted = await recipeWishListModel.findOne({recipeId,userEmail});
       if(isRecipeExisted){
           return res.status(401).json({"msg":"This recipe already existed to your wishList"});
@@ -51,8 +49,8 @@ async function  deleteAllWishList(req,res){
 async function  deleteOneWishList(req,res){
   try{
     const recipeId = req.params.recipeId.slice(1);
-    const response = await recipeWishListModel.deleteOne({recipeId , deleteOneRecipeByemail});
-    console.log("jjj",response)
+    const userEmail = req.params.email.slice(1);
+    const response = await recipeWishListModel.deleteOne({recipeId ,userEmail});
     res.status(200).json({"msg":"given wishList delete request successfully complete"});
   }catch(err){
     console.log("error occure at recipe Delete one WishList controller => ",err);

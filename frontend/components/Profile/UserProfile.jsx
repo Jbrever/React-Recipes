@@ -120,13 +120,14 @@ function UserProfile(){
         e.preventDefault();
         const recipeId =  e.target.id;
         try{
-          let response = await axios.delete(`https://react-recipes-server.vercel.app/wishList/deleteOneRecipeWishList/:${recipeId}`);
-        //   const response = await axios.delete(`http://localhost:4000/wishList/deleteOneRecipeWishList/:${recipeId}`); 
+          let response = await axios.delete(`https://react-recipes-server.vercel.app/wishList/deleteOneRecipeWishList/:${recipeId}/:${userData.email}`);
+          // const response = await axios.delete(`http://localhost:4000/wishList/deleteOneRecipeWishList/:${recipeId}/:${userData.email}`);
           if(response.status == 200){
-            //for refresh wishList data 
+            //for refresh wishList data
             const response = await axios.get(`https://react-recipes-server.vercel.app/wishList/wishListdata/:${userData.email}`); 
             setWishListData(response.data.wishListData);
           }
+          
           
         }catch(err){
           console.log("error occure during delete specific recipe from wishList => ",err.response);

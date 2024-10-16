@@ -4,7 +4,6 @@ const recipeWishListSchema = new mongoose.Schema({
     recipeId:{
         type:String,
         required:true,
-        unique:true,
     },
     image:{
         type:String,
