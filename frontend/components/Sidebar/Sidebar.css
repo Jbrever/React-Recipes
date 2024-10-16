@@ -141,6 +141,11 @@
 }
 
 @media (max-width:430px) {
+    
+    .darkModeSidebarContainer .sidebarMainContainer{
+        background-color: #343434;
+        color: rgba(232, 230, 230, 0.872);
+    }
     .sidebarMainContainer{
         display: none;
         margin-top: 60px;

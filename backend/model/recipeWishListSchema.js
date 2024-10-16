@@ -24,6 +24,7 @@ const recipeWishListSchema = new mongoose.Schema({
     },
 })
 
+recipeWishListSchema.index({recipeId:1,userEmail:1},{unique:true});
 const recipeWishListModel = mongoose.model("recipeWishList",recipeWishListSchema);
 
 module.exports = recipeWishListModel;

@@ -26,7 +26,7 @@ function Recipes(){
                     </div>
                    <div className="page1">
                      {data.map((item,index)=>{
-                          return <RecipesCards key={index} id={item.id} image={item.image} title={item.title}/>
+                          return <RecipesCards key={index} id={item.id} image={item.image} title={item.title} whichComponentUsedIt={'recipesSection'}/>
                      })}
                    </div>         
                 </div>

@@ -51,7 +51,9 @@ function Sidebar(){
 
           // for mobile use
           let sidebarMainContainer = document.querySelector(".sidebarMainContainer");
-         sidebarMainContainer.classList.toggle("activeSidebar");
+          sidebarMainContainer.classList.toggle("activeSidebar");
+          let hideBtnContainer = document.querySelector(".hideBtnContainer");
+          hideBtnContainer.classList.toggle("hideBtnVisible"); 
         } 
         setTimeout(()=>{
           e.target.checked = false
@@ -80,10 +82,12 @@ function Sidebar(){
         const path = `/recipes/search/:${e.target.value}`; 
         navigate(path);
         e.target.value = ''
-
+       
         // for mobile use
         let sidebarMainContainer = document.querySelector(".sidebarMainContainer");
         sidebarMainContainer.classList.toggle("activeSidebar");
+        let hideBtnContainer = document.querySelector(".hideBtnContainer");
+        hideBtnContainer.classList.toggle("hideBtnVisible");
       }
     }
     
@@ -123,7 +127,6 @@ function Sidebar(){
      
 
     // for Dark light theme Mode
-
     let { themeMode }= useContext(ThemeModeContext)
      
      useEffect(()=>{

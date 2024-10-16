@@ -98,6 +98,48 @@ function UserProfile(){
          }
     }
 
+    
+
+//    this below code is taken from recipeCard component because in recipe Card i can't refresh wishList data 
+//    without reload entire page , so i needed the state that can be refresh wishList's data 
+//    by just changing it's state without reload entire page so those State named is "wishListData" that i managed in this profile component
+
+    useEffect(()=>{
+        // deleteBtnTag taken by recipeCard component, it's not declared in profile component
+        const deleteBtnTag = document.querySelectorAll('.deleteBtn')
+
+        // it's work only for the card component
+        deleteBtnTag.forEach(btns=>{
+            btns.innerText = 'x'
+            btns.classList.add('active');
+            btns.addEventListener('click',handleDeleteSpecificRecipeWishListBtn)
+          })
+    })
+
+    async function handleDeleteSpecificRecipeWishListBtn(e) {
+        e.preventDefault();
+        const recipeId =  e.target.id;
+        try{
+          let response = await axios.delete(`https://react-recipes-server.vercel.app/wishList/deleteSpecificRecipe/:${recipeId}`);
+        //   const response = await axios.delete(`http://localhost:4000/wishList/deleteOneRecipeWishList/:${recipeId}`); 
+          if(response.status == 200){
+            //for refresh wishList data 
+            const response = await axios.get(`https://react-recipes-server.vercel.app/wishList/wishListdata/:${userData.email}`); 
+            setWishListData(response.data.wishListData);
+          }
+          
+        }catch(err){
+          console.log("error occure during delete specific recipe from wishList => ",err.response);
+          // if recipe wishList empty 
+          if(err.response.status == 401){
+            document.querySelector(".deleteAllWishList").remove();
+            document.querySelector(".wishListH2Heading").innerText = "your wishList is empty"
+            setWishListData([]);
+          }
+        }
+    }
+
+
     return(
         <div className="profileContainer">
            <div className="userNotLogedIN">
@@ -121,7 +163,7 @@ function UserProfile(){
                   <div className="wishListMain">
                     {
                         wishListData.map((ele,index)=>{
-                           return <RecipesCards key={index} id={ele.recipeId} image={ele.image} title={ele.title}/>
+                           return <RecipesCards key={index} id={ele.recipeId} image={ele.image} title={ele.title} whichComponentUsedIt={"profile"}/>
                         })
                     }
                   </div>

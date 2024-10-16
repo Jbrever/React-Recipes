@@ -1,5 +1,5 @@
 const {recipeWishListModel} = require("../model/index")
-
+let email = undefined;
 async function  postRecipeWishList(req,res){
   try{
       const {recipeId,image,title,userData} = req.body;
@@ -14,7 +14,7 @@ async function  postRecipeWishList(req,res){
       res.status(201).json({"msg":"This recipe Added to your wishList"});
   }catch(err){
     console.log("error occure at recipe WishList controller => ",err);
-    res.status(404).json({'msg':"sorry , server problem please try after sometime"})   
+    res.status(404).json({'msg':"sorry , error , please report it"})   
   }
 }
 
@@ -31,7 +31,7 @@ async function  getRecipeWishList(req,res){
         res.status(201).json({"msg":"your wishList data is fetched","wishListData":wishListData});
       }catch(err){
       console.log("error occure at recipe getWishList controller => ",err);
-      res.status(404).json({'msg':"sorry , server problem please try after sometime"})   
+      res.status(404).json({'msg':"sorry , error , please report it"})   
     }
 }
 
@@ -43,8 +43,21 @@ async function  deleteAllWishList(req,res){
       res.status(200).json({"msg":"all wishList data successfully deleted"});
     }catch(err){
       console.log("error occure at recipe Delete All WishList controller => ",err);
-      res.status(404).json({'msg':"sorry , server problem please try after sometime"})
+      res.status(404).json({'msg':"sorry , error , please report it"})
     }
 }
 
-module.exports = {postRecipeWishList , getRecipeWishList , deleteAllWishList};
+async function  deleteOneWishList(req,res){
+  try{
+    const recipeId = req.params.recipeId.slice(1);
+    const response = await recipeWishListModel.deleteOne({recipeId , email});
+    console.log("jjj",response)
+    res.status(200).json({"msg":"given wishList delete request successfully complete"});
+  }catch(err){
+    console.log("error occure at recipe Delete one WishList controller => ",err);
+    res.status(404).json({'msg':"sorry , error , please report it"});
+  }
+}
+
+
+module.exports = {postRecipeWishList , getRecipeWishList , deleteAllWishList , deleteOneWishList};

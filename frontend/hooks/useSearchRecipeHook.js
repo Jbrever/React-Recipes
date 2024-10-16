@@ -5,7 +5,6 @@ import {recipeData} from '../Dummy Data/index'
  function useSearchRecipeHook (searchValue){
     const [ data , setData ] = useState([])
     // const API_KEY = process.env.REACT_APP_API_KEY;
-    console.log("sa",searchValue);
     if(searchValue == null) searchValue = "veg"
     useEffect(()=>{
       const fetchData = async () =>{

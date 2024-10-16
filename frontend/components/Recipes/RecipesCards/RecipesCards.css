@@ -30,6 +30,25 @@
     border-radius: 15px;
 }
 
+.recipesCardContainer .recipeCardImage .deleteBtn.active{
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+    padding: 1px 6px;
+    background-color: rgb(255, 48, 48);
+    border-radius:20px ;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+}
+.recipesCardContainer .recipeCardImage .deleteBtn:hover{
+    background-color: rgb(255, 101, 101);
+}
+.recipesCardContainer .recipeCardImage .deleteBtn:active{
+    transform: scale(0.96);
+}
+
 .recipesCardContainer .recipeWishList{
   padding:10px 0px 0px 0;
   color: rgba(255, 94, 94, 0.658);
@@ -46,6 +65,9 @@
     color : rgb(255, 90, 90);
 }
 
+.recipesCardContainer .recipeWishList .active{
+  color: red;
+}
 
 .recipesCardContainer .recipeWishList:active{
     transform: scale(0.9);
