@@ -125,11 +125,11 @@ function SignupForm(){
                  <FontAwesomeIcon icon={faLock}/>
                  <input required type="password" name="password" value={password} onChange={(e)=>setPassword(e.target.value)}  placeholder="Enter Password" id="password"/>
               </label>
-              <label htmlFor="re-password">
+              {/* <label htmlFor="re-password">
                  <FontAwesomeIcon icon={faLock}/>
                  <input required type="text" name="repassword" value={rePassword} onChange={(e)=>setRePassword(e.target.value)}   placeholder="Renter password"id="re-password"/>
               </label>
-           
+            */}
               <div className="links">
                 <Link to="/login" className="loginLink">Login</Link>
                 {/* <Link href="#" className="forgetPas" target="_main">forget password ?</Link>      */}
