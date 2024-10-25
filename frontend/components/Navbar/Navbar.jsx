@@ -79,12 +79,12 @@ function Navbar(){
                     
                     </NavLink>
                    
-                   <NavLink to='/books' className={({isActive})=>
+                   {/* <NavLink to='/books' className={({isActive})=>
                           isActive ? 'active-nav':'nav-link'
                         } style={{textDecoration:'none'}}> 
                         
                        <li>Books</li>        
-                   </NavLink>
+                   </NavLink> */}
 
                    <NavLink to='/recipes/all' className={({isActive})=>
                           isActive ? 'active-nav':'nav-link'
@@ -94,11 +94,11 @@ function Navbar(){
                     
                     </NavLink>
 
-                    <NavLink to='/start' className={({isActive})=>
+                    <NavLink to='/profile' className={({isActive})=>
                           isActive ? 'active-nav':'nav-link'
                         } style={{textDecoration:'none'}}> 
                     
-                         <li>Contact</li>
+                         <li>Profile</li>
                     
                     </NavLink>
                 </ul>
